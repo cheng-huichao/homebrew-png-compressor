@@ -7,7 +7,7 @@ class PngCompressor < Formula
 
   def install
     # install the binary
-    bin.install "png-compressor"
+    bin.install "compress-image"
 
     # Install the dependencies
     (libexec/"depends").install Dir["depends/*"]
