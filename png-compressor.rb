@@ -6,10 +6,42 @@ class PngCompressor < Formula
   version "1.0.0"
 
   def install
+    # install the binary
     bin.install "png-compressor"
+
+    # Install the dependencies
+    (libexec/"depends").install Dir["depends/*"]
+
   end
 
+  def plist
+    <<~EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+          <key>Label</key>
+          <string>com.png-compressor</string>
+          <key>ProgramArguments</key>
+          <array>
+              <string>#{bin}/compress-image</string>
+          </array>
+          <key>RunAtLoad</key>
+          <true/>
+          <key>KeepAlive</key>
+          <true/>
+      </dict>
+      </plist>
+    EOS
+  end
+
+  post_install
+    # Run the binary after installation
+    system "#{bin}/compress-image"
+  end
+
+
   test do
-    system "#{bin}/png-compressor", "--version"
+    system "#{bin}/compress-image", "--version"
   end
 end
