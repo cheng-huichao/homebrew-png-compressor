@@ -2,7 +2,7 @@ class PngCompressor < Formula
   desc "Batch compress for your images"
   homepage "https://github.com/cheng-huichao/homebrew-png-compressor"
   url "https://github.com/cheng-huichao/homebrew-png-compressor/releases/download/v1.0.0/png-compressor.tar.gz"
-  sha256 "923812376413481fd6ff7615d66d116a7ee00f5e0ec0a83b859f3718d431818e  png-compressor.tar.gz"
+  sha256 "af857855f320c1f109d5be27989418f610c4960f15c2d67adedcbe218bb1da0c  png-compressor.tar.gz"
   version "1.0.0"
 
   def install
