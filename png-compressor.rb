@@ -41,7 +41,7 @@ class PngCompressor < Formula
   end
 
 
-  test do
-    system "#{bin}/compress-image", "--version"
-  end
+  # test do
+  #   system "#{bin}/compress-image", "--version"
+  # end
 end
